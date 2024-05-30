@@ -1,0 +1,41 @@
+print("welcome to blood bank management")
+def addDonor(donors):
+    print("\nEnter donor details:")
+    name = input("Name: ")
+    age = int(input("Age: "))
+    bloodGroup = input("Blood Group: ")
+    donor = [name, age, bloodGroup]
+    donors.append(donor)
+    print("Donor added successfully!")
+def displayDonors(donors):
+      if len(donors)==0:
+        print("No donors to display.")
+        return
+    print("\nList of Donors:")
+    print("Name\tAge\tBlood Group")
+    for i in donors:
+          print(i[0],"\t",i[1],"\t",i[2])
+    b=input("enter the blood group to be found : ")
+    for j in donors:
+        if j[2]==b:
+             print("Name\tAge\tBlood Group")
+             print(i[0],"\t",i[1],"\t",i[2])
+        else:
+            print("NO DONORS FOUND!")
+
+donors = []
+while True:
+    print("\nBlood Bank Management System")
+    print("1. Add Donor")
+    print("2. Display Donors")
+    print("3. Exit")
+    choice = int(input("Enter your choice: "))
+if choice == 1:
+        addDonor(donors)
+    elif choice == 2:
+        displayDonors(donors)
+    elif choice == 3:
+        print("Exiting the program. Thank you!")
+        break
+    else:
+        print("Invalid choice. Please try again.")
